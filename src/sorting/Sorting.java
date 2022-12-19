@@ -36,18 +36,7 @@ public class Sorting {
         a = reply_a;
         switch (a) {
             case 1:
-
-                System.out.println("BUBBLE SORT");
-                System.out.println("Select :  1. Start random ");
-                System.out.println("          2. Insert Element");
-                System.out.println("          3.Exit ");
-                reply_a = reply.nextInt();
-                b = reply_a;
-
-                switch (b) {
-                    case 1:
-                        bubbleme.bubblestartme();
-                }
+                case1_1();
                 break;
             case 2:
                 System.out.println("INSERTION SORT");
@@ -75,5 +64,35 @@ public class Sorting {
                 break;
 
         }
+    }
+
+    static void case1_1() {
+        System.out.println("");
+        System.out.println("BUBBLE SORT");
+        System.out.println("Select :  1. Start random ");
+        System.out.println("          2. Insert Element");
+        System.out.println("          3.Exit ");
+        int reply_aa = reply.nextInt();
+        b = reply_aa;
+
+        switch (b) {
+            case 1:
+                bubbleme.bubblestartme();
+                case1_1();
+                break;
+            case 2 :
+                bubbleme.start();
+                break;
+            case 3:
+                start();
+                break;
+                default:
+                    System.out.println("Invalid Keyword:");
+                    System.out.println("");
+                    case1_1();
+                    break;
+                    
+        }
+
     }
 }
