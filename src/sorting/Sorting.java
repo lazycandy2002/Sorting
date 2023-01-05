@@ -17,7 +17,7 @@ public class Sorting {
     static Insertionsort insertionme = new Insertionsort();
     static Selectionsort selectme = new Selectionsort();
     static Scanner reply = new Scanner(System.in);
-    static int a, b, c, d;
+    static int a, b,c;
 
     public static void main(String[] args) {
         start();
@@ -39,28 +39,10 @@ public class Sorting {
                 case1_1();
                 break;
             case 2:
-                System.out.println("INSERTION SORT");
-                System.out.println("Select :  1. Start random ");
-                System.out.println("          2. Insert Element");
-                System.out.println("          3.Exit ");
-                reply_a = reply.nextInt();
-                c = reply_a;
-                switch (c) {
-                    case 1:
-                        insertionme.insertionstartme();
-                }
+                case2_2();
                 break;
             case 3:
-                System.out.println("SELECTION SORT");
-                System.out.println("Select :  1. Start random ");
-                System.out.println("          2. Insert Element");
-                System.out.println("          3.Exit ");
-                reply_a = reply.nextInt();
-                d = reply_a;
-                switch (d) {
-                    case 1:
-                        selectme.selecttionstartme();
-                }
+                case3_3();
                 break;
 
         }
@@ -80,18 +62,77 @@ public class Sorting {
                 bubbleme.bubblestartme();
                 case1_1();
                 break;
-            case 2 :
+            case 2:
                 bubbleme.start();
                 break;
             case 3:
                 start();
                 break;
-                default:
-                    System.out.println("Invalid Keyword:");
-                    System.out.println("");
-                    case1_1();
-                    break;
-                    
+            default:
+                System.out.println("Invalid Keyword:");
+                System.out.println("");
+                case1_1();
+                break;
+
+        }
+    }
+
+    static void case2_2() {
+        System.out.println("");
+        System.out.println("INSERTION SORT");
+        System.out.println("Select :  1. Start random ");
+        System.out.println("          2. Insert Element");
+        System.out.println("          3.Exit ");
+        int reply_aa = reply.nextInt();
+        b = reply_aa;
+
+        switch (b) {
+            case 1:
+                insertionme.insertionstartme();
+                case2_2();
+                break;
+            case 2:
+                insertionme.start();
+                break;
+            case 3:
+                start();
+                break;
+            default:
+                System.out.println("Invalid Keyword:");
+                System.out.println("");
+                case2_2();
+                break;
+
+        }
+
+    }
+
+    static void case3_3() {
+        System.out.println("");
+        System.out.println("SELECTION SORT");
+        System.out.println("Select :  1. Start random ");
+        System.out.println("          2. Insert Element");
+        System.out.println("          3.Exit ");
+        int reply_aa = reply.nextInt();
+        c = reply_aa;
+
+        switch (c) {
+            case 1:
+                selectme.selecttionstartme();
+                case3_3();
+                break;
+            case 2:
+                selectme.start();
+                break;
+            case 3:
+                start();
+                break;
+            default:
+                System.out.println("Invalid Keyword:");
+                System.out.println("");
+                case3_3();
+                break;
+
         }
 
     }
