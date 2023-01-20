@@ -13,6 +13,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Insertionsort {
+
     public static int a;
     Sorting back = new Sorting();
     static Scanner reply = new Scanner(System.in);
@@ -38,52 +39,87 @@ public class Insertionsort {
             numbers[i] = element.nextInt(100);
         }
 
-        System.out.println("Before:");
-        printArray(numbers);
+        System.out.println("Before : ");
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.print(numbers[i] + " ");
+        }
+        System.out.println("\n");
 
         insertionSort(numbers);
 
-        System.out.println("\nAfter:");
-        printArray(numbers);
+        System.out.println("");
+        System.out.println("After : ");
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.print(numbers[i] + " ");
+        }
+        System.out.println("");
 
     }
+
     public void maninsertionstartme() {
 
-        System.out.println("Before:");
-        manprintArray(istack);
+        System.out.println("Before : ");
+        for (int i = 0; i < istack.length; i++) {
+            System.out.print(istack[i] + " ");
+        }
+        System.out.println("\n");
 
         maninsertionSort();
 
-        System.out.println("\nAfter:");
-        manprintArray(istack);
+        System.out.println("");
+        System.out.println("After : ");
+        for (int i = 0; i < istack.length; i++) {
+            System.out.print(istack[i] + " ");
+        }
+        System.out.println("");
 
     }
-    
+
     private static void insertionSort(int[] inputArray) {
-        for (int i = 1; i < inputArray.length; i++) {
-
-            int currentValue = inputArray[i];
-
+        int n = inputArray.length;
+        int num = 1;
+        for (int i = 1; i < n; ++i) {
+            int key = inputArray[i];
             int j = i - 1;
-            while (j >= 0 && inputArray[j] > currentValue) {
+
+            while (j >= 0 && inputArray[j] > key) {
                 inputArray[j + 1] = inputArray[j];
-                j--;
+                j = j - 1;
             }
-            inputArray[j + 1] = currentValue;
+            inputArray[j + 1] = key;
+            System.out.println("");
+            System.out.println("-----------------------------");
+            System.out.println("Attempt " + num);
+            for (int g = 0; g < inputArray.length; g++) {
+                System.out.print(inputArray[g] + " ");
+
+            }
+            System.out.println("\n");
+            num++;
         }
     }
-    
-        private void maninsertionSort() {
-        for (int i = 1; i < istack.length; i++) {
 
-            int currentValue = istack[i];
-
+    private void maninsertionSort() {
+        int n = istack.length;
+        int num = 1;
+        for (int i = 1; i < n; ++i) {
+            int key = istack[i];
             int j = i - 1;
-            while (j >= 0 && istack[j] > currentValue) {
+
+            while (j >= 0 && istack[j] > key) {
                 istack[j + 1] = istack[j];
-                j--;
+                j = j - 1;
             }
-            istack[j + 1] = currentValue;
+            istack[j + 1] = key;
+            System.out.println("");
+            System.out.println("-----------------------------");
+            System.out.println("Attempt " + num);
+            for (int g = 0; g < istack.length; g++) {
+                System.out.print(istack[g] + " ");
+
+            }
+            System.out.println("\n");
+            num++;
         }
     }
 
@@ -92,12 +128,15 @@ public class Insertionsort {
             System.out.println(numbers[i]);
         }
     }
-            public void manprintArray(int[] numbers) {
+
+    public void manprintArray(int[] numbers) {
         for (int i = 0; i < istack.length; i++) {
             System.out.println(istack[i]);
         }
+        System.out.println("");
     }
-   void peek() {
+
+    void peek() {
         if (head == -1 && tail == -1) {
             System.out.println("There is no element inside the queue to display");
         } else {
@@ -155,9 +194,11 @@ public class Insertionsort {
         if (head == -1) {
             System.out.println("The Queue is Empty");
         } else {
-            for (int i = head; i <= tail; i++) {
-                System.out.println(" [ " + istack[i] + " ]");
+            for (int i = 0; i < istack.length; i++) {
+                System.out.print(istack[i] + " ");
+
             }
+            System.out.println("");
         }
     }
 
@@ -212,10 +253,10 @@ public class Insertionsort {
                 maninsertionstartme();
                 start();
                 break;
-                
+
             case 4:
                 back.case2_2();
-                
+
             default:
                 System.out.println("INVALID, TRY AGAIN");
                 filter_1();

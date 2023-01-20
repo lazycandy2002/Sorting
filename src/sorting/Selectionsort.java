@@ -38,56 +38,93 @@ public class Selectionsort {
             numbers[i] = element.nextInt(100);
         }
 
-        System.out.println("Before:");
-        printArray(numbers);
+        System.out.println("Before : ");
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.print(numbers[i] + " ");
+        }
+        System.out.println("\n");
 
         selectionSort(numbers);
 
-        System.out.println("\nAfter:");
-        printArray(numbers);
-
+        System.out.println("");
+        System.out.println("After : ");
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.print(numbers[i] + " ");
+        }
+        System.out.println("");
     }
 
     public void manselecttionstartme() {
 
-        System.out.println("Before:");
-        printArray(istack);
+        System.out.println("Before : ");
+        for (int i = 0; i < istack.length; i++) {
+            System.out.print(istack[i] + " ");
+        }
+        System.out.println("\n");
 
         manselectionSort();
 
-        System.out.println("\nAfter:");
-        printArray(istack);
+        System.out.println("");
+        System.out.println("After : ");
+        for (int i = 0; i < istack.length; i++) {
+            System.out.print(istack[i] + " ");
+        }
+        System.out.println("");
 
     }
+    int mn;
+    int tem;
 
-    private static void selectionSort(int[] inputArray) {
-        for (int i = 0; i < inputArray.length - 1; i++) {
-            int min = i;
-            for (int j = i + 1; j < inputArray.length; j++) {
-                if (inputArray[min] > inputArray[j]) {
-                    min = j;
+    private void selectionSort(int[] inputArray) {
+        int size, i, j, temp;
+        int num = 1;
+
+        for (i = 0; i < inputArray.length; i++) {
+            for (j = i + 1; j < inputArray.length; j++) {
+                if (inputArray[i] > inputArray[j]) {
+                    temp = inputArray[i];
+                    inputArray[i] = inputArray[j];
+                    inputArray[j] = temp;
+
                 }
+                System.out.println("--------------------------");
+                System.out.println("Attempt " + num);
+                for (int g = 0; g < inputArray.length; g++) {
+                    System.out.print(inputArray[g] + " ");
 
+                }
+                System.out.println("\n");
+                num++;
+                System.out.println("Temp : " + inputArray[j]);
+                System.out.println("Min : " + inputArray[i]);
+                System.out.println("");
             }
-            int temp = inputArray[i];
-            inputArray[i] = inputArray[min];
-            inputArray[min] = temp;
-
         }
     }
 
     private void manselectionSort() {
-        for (int i = 0; i < istack.length - 1; i++) {
-            int min = i;
-            for (int j = i + 1; j < istack.length; j++) {
-                if (istack[min] > istack[j]) {
-                    min = j;
-                }
+        int size, i, j, temp;
+        int num = 1;
 
+        for (i = 0; i < istack.length; i++) {
+            for (j = i + 1; j < istack.length; j++) {
+                if (istack[i] > istack[j]) {
+                    temp = istack[i];
+                    istack[i] = istack[j];
+                    istack[j] = temp;
+
+                }
+                System.out.println("--------------------------");
+                System.out.println("Attempt " + num);
+                for (int g = 0; g < istack.length; g++) {
+                    System.out.print(istack[g] + " ");
+
+                }
+                System.out.println("\n");
+                num++;
+                System.out.println("Temp : " + istack[j]);
+                System.out.println("Min : " + istack[i]);
             }
-            int temp = istack[i];
-            istack[i] = istack[min];
-            istack[min] = temp;
 
         }
     }
@@ -98,13 +135,14 @@ public class Selectionsort {
         }
     }
 
-    public void manprintArray() {
+    public void manprintArray(int[] numbers) {
         for (int i = 0; i < istack.length; i++) {
             System.out.println(istack[i]);
         }
+        System.out.println("");
     }
-    
-      void peek() {
+
+    void peek() {
         if (head == -1 && tail == -1) {
             System.out.println("There is no element inside the queue to display");
         } else {
@@ -159,12 +197,15 @@ public class Selectionsort {
     }
 
     void display() {
+        System.out.println("");
         if (head == -1) {
             System.out.println("The Queue is Empty");
         } else {
-            for (int i = head; i <= tail; i++) {
-                System.out.println(" [ " + istack[i] + " ]");
+            for (int i = 0; i < istack.length; i++) {
+                System.out.print(istack[i] + " ");
+
             }
+            System.out.println("");
         }
     }
 
@@ -219,10 +260,10 @@ public class Selectionsort {
                 manselecttionstartme();
                 start();
                 break;
-                
+
             case 4:
                 back.case3_3();
-                
+
             default:
                 System.out.println("INVALID, TRY AGAIN");
                 filter_1();
@@ -231,5 +272,3 @@ public class Selectionsort {
         }
     }
 }
-
-

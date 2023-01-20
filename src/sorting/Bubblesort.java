@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class Bubblesort {
 
     public static int a;
-    Sorting back = new Sorting ();
+    Sorting back = new Sorting();
     static Scanner reply = new Scanner(System.in);
     static Scanner reply_0 = new Scanner(System.in);
     static Scanner reply_1 = new Scanner(System.in);
@@ -34,56 +34,78 @@ public class Bubblesort {
     }
 
     public void bubblestartme() {
-        for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = element.nextInt(100);
-        }
 
         System.out.println("Before:");
-        printArray(numbers);
-
-        boolean swappedfine = true;
-
-        while (swappedfine) {
-            swappedfine = false;
-
-            for (int i = 0; i < numbers.length - 1; i++) {
-                if (numbers[i] > numbers[i + 1]) {
-                    swappedfine = true;
-                    int temp = numbers[i];
-                    numbers[i] = numbers[i + 1];
-                    numbers[i + 1] = temp;
-                }
-            }
-
-            System.out.println("\nAfter:");
-            printArray(numbers);
-
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = element.nextInt(100);
+            System.out.print(numbers[i] + " ");
         }
+        System.out.println("");
+        int n = numbers.length;
+        int temp = 0;
+        int num = 1;
+        for (int i = 0; i < n; i++) {
+
+            for (int j = 1; j < (n - i); j++) {
+
+                if (numbers[j - 1] > numbers[j]) {
+                    //swap elements  
+                    temp = numbers[j - 1];
+                    numbers[j - 1] = numbers[j];
+                    numbers[j] = temp;
+                }
+
+            }
+            System.out.println("");
+            System.out.println("Attempt: " + num);
+            for (int g = 0; g < numbers.length; g++) {
+                System.out.print(numbers[g] + " ");
+            }
+            System.out.println("\n");
+            num++;
+        }
+        System.out.println("After");
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.print(numbers[i] + " ");
+        }
+        System.out.println("");
     }
 
     public void manbubblestartme() {
 
-        System.out.println("Before:");
-        manprintArray(numbers);
-
-        boolean swappedfine = true;
-
-        while (swappedfine) {
-            swappedfine = false;
-
-            for (int i = 0; i < istack.length - 1; i++) {
-                if (istack[i] > istack[i + 1]) {
-                    swappedfine = true;
-                    int temp = istack[i];
-                    istack[i] = istack[i + 1];
-                    istack[i + 1] = temp;
-                }
-            }
-
-            System.out.println("\nAfter:");
-            manprintArray(numbers);
-
+        System.out.println("Before : ");
+        for (int i = 0; i < istack.length; i++) {
+            System.out.print(istack[i] + " ");
         }
+        System.out.println("");
+        int n = istack.length;
+        int temp = 0;
+        int num = 1;
+        for (int i = 0; i < n; i++) {
+
+            for (int j = 1; j < (n - i); j++) {
+
+                if (istack[j - 1] > istack[j]) {
+                    //swap elements  
+                    temp = istack[j - 1];
+                    istack[j - 1] = istack[j];
+                    istack[j] = temp;
+                }
+
+            }
+            System.out.println("");
+            System.out.println("Attempt: " + num);
+            for (int g = 0; g < istack.length; g++) {
+                System.out.print(istack[g] + " ");
+            }
+            System.out.println("\n");
+            num++;
+        }
+        System.out.println("After");
+        for (int i = 0; i < istack.length; i++) {
+            System.out.print(istack[i] + " ");
+        }
+        System.out.println("");
     }
 
     public void printArray(int[] numbers) {
@@ -91,7 +113,8 @@ public class Bubblesort {
             System.out.println(numbers[i]);
         }
     }
-        public void manprintArray(int[] numbers) {
+
+    public void manprintArray(int[] numbers) {
         for (int i = 0; i < istack.length; i++) {
             System.out.println(istack[i]);
         }
@@ -152,12 +175,15 @@ public class Bubblesort {
     }
 
     void display() {
+        System.out.println("");
         if (head == -1) {
             System.out.println("The Queue is Empty");
         } else {
-            for (int i = head; i <= tail; i++) {
-                System.out.println(" [ " + istack[i] + " ]");
+            for (int i = 0; i < istack.length; i++) {
+                System.out.print( istack[i] + " ");
+
             }
+            System.out.println("");
         }
     }
 
@@ -212,10 +238,10 @@ public class Bubblesort {
                 manbubblestartme();
                 start();
                 break;
-                
+
             case 4:
                 back.case1_1();
-                
+
             default:
                 System.out.println("INVALID, TRY AGAIN");
                 filter_1();
